@@ -18,12 +18,12 @@
 
 @font-face {
     font-family: 'Steppe';
-    src: url('/fonts/Steppe.woff') format('woff2');
+    src: url('fonts/Steppe.woff') format('woff2');
 }
 
 @font-face {
     font-family: 'MyBebas';
-    src: url('/fonts/bebas-neue-regular.woff') format('woff2');
+    src: url('fonts/bebas-neue-regular.woff') format('woff2');
 }
 
 html {

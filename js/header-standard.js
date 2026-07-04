@@ -22,7 +22,7 @@ if (headerContainer) {
             
             <div class="header-center">
                 <a href="/" class="logo">
-                    <img src="/img/logo.svg" alt="HIRO" class="logo-img">
+                    <img src="img/logo.svg" alt="HIRO" class="logo-img">
                 </a>
             </div>
             

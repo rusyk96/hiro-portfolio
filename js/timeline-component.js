@@ -1,6 +1,6 @@
 // js/timeline-component.js
 
-const timelineStylePath = '/css/backdrops/timeline__backdrop.css';
+const timelineStylePath = 'css/backdrops/timeline__backdrop.css';
 if (!document.querySelector(`link[href="${timelineStylePath}"]`)) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
