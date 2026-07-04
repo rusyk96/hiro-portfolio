@@ -1,0 +1,13 @@
+/* css/tablet/base.css */
+
+/* Корректируем глобальные отступы контейнеров и секций для iPad/планшетов */
+.hero-wrapper, 
+.section-container, 
+.skills-content {
+    padding: 0 40px !important; 
+}
+
+/* Слегка уменьшаем гигантский десктопный gap между текстом и аватаром */
+.hero-wrapper { 
+    gap: 100px !important; 
+}

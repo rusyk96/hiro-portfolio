@@ -1,0 +1,191 @@
+/* css/mobile/style.css */
+
+/* --- СТИЛИ КОНТЕНТА ДО 768px --- */
+.hero-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Швейцарская уверенная горизонталь */
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 24px !important; 
+    text-align: left !important; 
+    padding: 0 20px !important;
+}
+
+.hero-text-block {
+    flex: 1; 
+    min-height: auto;
+}
+
+.hero-image-block {
+    flex-shrink: 0; 
+}
+
+.hero-avatar {
+    width: clamp(140px, 25vw, 240px) !important; 
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 24px; /* Твои скругления суперэллипса */
+}
+
+/* Схлопываем Bento-сетку в модульную вертикаль */
+.bento-grid {
+    grid-template-columns: 1fr !important; 
+    gap: 16px;
+}
+
+.design-grid, .photo-grid {
+    grid-auto-rows: auto; 
+}
+
+.design-item, .photo-item {
+    height: 300px; 
+}
+
+html, body {
+    overflow-x: hidden; /* Защита от горизонтального скролла */
+}
+
+.vertical-section {
+    padding: 60px 0;
+}
+
+.section-container {
+    padding: 0 20px;
+}
+
+/* --- МОБИЛЬНЫЙ ЯБЛОЧНЫЙ ТУМАН APPLE ДО 768px --- */
+.site-header {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.header-container {
+    position: relative;
+    z-index: 10; 
+}
+
+/* Стабильный щит */
+.site-header::before {
+    content: '';
+    position: absolute;
+    top: -40px; 
+    left: 0;
+    width: 100%;
+    height: calc(var(--header-height) + 15px); 
+    background-color: rgba(244, 241, 234, 0.4); 
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Софт-дуга (раздуваем ширину, чтобы сгладить линию тумана на смартфоне) */
+.site-header::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    width: 450vw; 
+    height: 450px; 
+    top: -370px; 
+    border-radius: 50%;
+    background-color: rgba(244, 241, 234, 0.45); 
+    backdrop-filter: blur(30px) saturate(125%);
+    -webkit-backdrop-filter: blur(16px) saturate(125%);
+    filter: blur(20px); 
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform, filter, backdrop-filter;
+}
+
+/* Утапливаем таймлайн поглубже, чтобы на мобилках не мешался */
+.timeline-nav {
+    top: calc(var(--header-height) - 10px);
+    right: -150px; 
+    width: 320px;
+    height: 440px;
+}
+
+.timeline-line, .timeline-dots {
+    top: 80px;
+    bottom: 80px;
+}
+
+
+/* ==========================================================================
+   МИКРО-КОРРЕКЦИЯ ДЛЯ САМЫХ МАЛЕНЬКИХ СМАРТФОНОВ (ДО 480px)
+   Поскольку это крайняя точка адаптива, мы держим её внутри мобильного файла
+   ========================================================================== */
+@media (max-width: 480px) {
+    .hero-wrapper, .section-container, .skills-content {
+        padding: 0 16px; 
+    }
+
+    .hero-name {
+        font-size: clamp(34px, 8vw, 50px) !important;
+        line-height: 0.95;
+    }
+
+    .hero-avatar {
+        width: clamp(110px, 32vw, 150px) !important; 
+    }
+
+    .design-item, .photo-item {
+        height: 320px; 
+    }
+
+    .skills-grid {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .text-top-right, .text-bottom-left {
+        text-align: left; 
+        max-width: 100%;
+    }
+}
+
+.projects-section {
+    padding-bottom: 60px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Выстраиваем в одну колонку на мобилках */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card {
+    border-radius: 24px; /* Чуть меньше скругление, чтобы на мобилке смотрелось аккуратно */
+}
+
+.project-card-image {
+    height: 280px;
+}
+
+.project-card-info {
+    padding: 20px; /* Экономим мобильное пространство */
+}
+
+.project-card-title {
+    font-size: 1.4rem;
+}
+
+/* Корректируем баланс зон для узких мобильных экранов */
+.header-left {
+    flex: 2;
+    justify-content: flex-start;
+}
+
+.header-center {
+    flex: 0; /* Пустой центр в брендинге на мобилке сожмется в ноль */
+}
+
+.header-right {
+    flex: 2;
+    justify-content: flex-end;
+}

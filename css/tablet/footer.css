@@ -1,0 +1,17 @@
+/* css/tablet/footer.css */
+
+.footer-container {
+    display: flex !important;
+    flex-direction: row !important; /* Уверенно держим строку, в колонку уйдёт только на мобилках */
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    max-width: 100% !important; 
+    margin: 0 auto !important;
+    padding: 0 40px !important; /* Подгоняем под общие планшетные 40px, как в tablet/base.css */
+}
+
+/* Если ссылки на планшете кажутся слишком крупными или разъезжаются, можно слегка уменьшить gap */
+.footer-socials {
+    display: flex !important;
+    gap: 16px !important; /* Снижаем десктопные 24px до аккуратных 16px */
+}

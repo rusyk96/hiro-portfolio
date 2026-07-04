@@ -1,0 +1,61 @@
+/* css/backdrops/header__backdrop.css */
+
+/* ==========================================================================
+   1. БАЗОВАЯ СТРУКТУРА И УНИВЕРСАЛЬНАЯ ИМИТАЦИЯ (Chrome / Firefox / Edge)
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+    background: transparent;
+}
+
+/* Наша успешная имитация — густой, мягкий эллипс на чистом CSS */
+.header__backdrop {
+    position: absolute;
+    top: -360px;          /* Сдвинули чуть ниже (было -360px), чтобы плотное тело эллипса заходило в экран */
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    
+    width: 2500px; 
+    height: 490px;        /* Немного увеличили высоту, чтобы градиент размытия стал массивнее */
+    border-radius: 0 0 50% 50%;
+    
+    background-color: rgb(244, 241, 234); 
+    filter: blur(18px);   /* Уменьшили размытие (было 20px) — теперь края более плотные и не так сильно тают */
+    opacity: 0.99;        /* Абсолютная плотность */
+    
+    z-index: 1; 
+    pointer-events: none;
+    user-select: none;
+    will-change: transform, filter;
+}
+
+/* ==========================================================================
+   МОДИФИКАТОР ДЛЯ СУБ-СТРАНИЦ (Изолированный туман)
+   ========================================================================== */
+/* css/backdrops/header__backdrop.css */
+
+.header__backdrop_sub {
+    position: absolute;
+    top: -150px; 
+    left: 0;
+    width: 100%;
+    height: 450px;
+    
+    /* Магия градиента: плотность по краям, прозрачность в центре */
+    background: radial-gradient(
+        ellipse 140% 100% at 50% 0%, 
+        rgba(244, 241, 234, 0.95) 0%,   /* Плотный край */
+        rgba(244, 241, 234, 0.6) 30%,   /* Плавный переход */
+        transparent 65%                 /* Полная пустота в центре */
+    );
+    
+    filter: blur(40px);
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform, filter;
+}

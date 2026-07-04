@@ -1,0 +1,11 @@
+/* css/mobile/footer.css */
+
+#footer-component footer, 
+.footer-container { 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 24px !important;
+    padding: 40px 24px !important;
+}

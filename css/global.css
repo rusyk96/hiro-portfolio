@@ -1,0 +1,138 @@
+/* css/global.css */
+@import "backdrops/header__backdrop.css";
+
+/* ==========================================================================
+   1. ДЕСКТОП (БАЗА) — Грузится всегда, лежит в корне
+   ========================================================================== */
+@import "desktop/base.css";
+@import "desktop/header.css";
+@import "desktop/footer.css";
+@import "style.css"; /* Общие десктопные ховеры и каркас секций */
+
+/* ==========================================================================
+   2. ПЛАНШЕТЫ (769px - 1024px) — Полный патч под iPad и горизонтальные экраны
+   ========================================================================== */
+@import "tablet/base.css" screen and (min-width: 769px) and (max-width: 1024px);
+@import "tablet/header.css" screen and (min-width: 769px) and (max-width: 1024px);
+@import "tablet/footer.css" screen and (min-width: 769px) and (max-width: 1024px);
+@import "tablet/style.css" screen and (min-width: 769px) and (max-width: 1024px);
+
+/* ==========================================================================
+   3. МОБИЛЬНЫЕ (до 768px) — Полный патч под смартфоны любой ширины
+   ========================================================================== */
+@import "mobile/base.css" screen and (max-width: 768px);
+@import "mobile/header.css" screen and (max-width: 768px);
+@import "mobile/footer.css" screen and (max-width: 768px);
+@import "mobile/style.css" screen and (max-width: 768px);
+
+/* --- ПРЕЛОАДЕР (Оставляем тут, так как он сквозной и не мешает импортам) --- */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+
+.loader-logo {
+    width: 230px;
+    height: auto;
+    animation: fadeIn 1s ease-out forwards, pulse 3s ease-in-out 1s infinite alternate;
+}
+
+.loader-logo .cls-1 { fill: #f89721; }
+.loader-logo .cls-2 { fill: var(--bg-color); } 
+.loader-logo .cls-3 { fill: #151948; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+/* Контейнер секции */
+.projects-section {
+    padding: 40px 0 120px 0;
+    width: 100%;
+}
+
+/* Сетка проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* На десктопе 2 колонки, можно сделать 3 */
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Базовая карточка-прототип */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #f0f0f0; /* Цвет плашек как на главном экране */
+    border-radius: 32px; /* Фирменный суперэллипс скругления */
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+/* Эффект при наведении */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Область изображения */
+.project-card-image {
+    width: 100%;
+    height: 400px; /* Фиксированная высота для ровной сетки */
+    background-size: cover;
+    background-position: center;
+    background-color: #e5e5e5;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-card-image {
+    transform: scale(1.03); /* Легкий зум изображения внутри */
+}
+
+/* Блок с информацией */
+.project-card-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Мета-данные (Тег и Год) */
+.project-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+.project-tag {
+    font-weight: 500;
+}
+
+/* Название проекта */
+.project-card-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}

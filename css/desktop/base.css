@@ -1,0 +1,64 @@
+/* css/base.css */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-heading: 'MyBebas', sans-serif;
+    --font-body: 'Steppe', sans-serif;
+    --bg-color: #f4f1ea;       
+    --text-color: #1a1a1a;     
+    --accent-color: #f7931e;   
+    --gray-muted: #767676;     
+    --header-height: 100px;
+}
+
+@font-face {
+    font-family: 'Steppe';
+    src: url('/fonts/Steppe.woff') format('woff2');
+}
+
+@font-face {
+    font-family: 'MyBebas';
+    src: url('/fonts/bebas-neue-regular.woff') format('woff2');
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: var(--header-height); 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+h1, h2, h3, .hero-name {
+    font-family: var(--font-heading);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Оставляем только отступ для первой секции, чтобы она не заезжала под хедер */
+main > section:first-child {
+    padding-top: 200px; 
+}

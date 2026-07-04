@@ -1,0 +1,43 @@
+/* css/mobile/header.css */
+
+.site-header {
+    height: var(--header-height);
+    background-color: transparent !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.header-container {
+    padding: 0 16px !important;
+    height: 100%;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+/* Сюда же докидываешь стили для кнопки "Связаться" и бургера, если они там были */
+
+/* css/mobile/header.css */
+/* (Здесь уже лежат твои .site-header, .logo-img и кнопки из прошлого шага) */
+
+/* Добавляем мобильный туман: */
+.site-header::before {
+    height: calc(var(--header-height) + 10px); /* Чуть компактнее прямоугольник */
+    backdrop-filter: blur(12px) saturate(115%); /* Облегченный блур для экономии батареи */
+    -webkit-backdrop-filter: blur(10px) saturate(115%);
+}
+
+.site-header::after {
+    width: 400vw; /* Ещё шире, чтобы дуга на узком экране смартфона была идеально плоской */
+    height: 400px; 
+    top: -340px; /* Выравниваешь по высоте под мобильный бургер/меню */
+    border-radius: 50%;
+    background-color: rgba(244, 241, 234, 0.4); 
+    backdrop-filter: blur(25px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    filter: blur(15px); 
+    z-index: 1;
+    pointer-events: none;
+}

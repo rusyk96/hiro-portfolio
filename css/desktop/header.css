@@ -1,0 +1,127 @@
+/* css/header.css */
+
+/* ==========================================================================
+   1. БАЗОВАЯ ПЛАНКА ХЕДЕРА (Общая для всех)
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+    background: transparent;
+}
+
+.header-container {
+    position: relative;
+    z-index: 2; /* Контент строго ПОВЕРХ маски, чтобы буквы не размывались */
+    max-width: 1400px; 
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 60px;   
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100px; 
+    width: auto;  
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    background-color: #222222;
+    padding: 4px;              
+    border-radius: 100px;
+    gap: 2px;                  
+}
+
+.nav-link {
+    display: flex;        
+    align-items: center;  
+    justify-content: center; 
+    height: 32px;         
+    padding: 0 18px;      
+    line-height: 1;       
+    font-size: 13px; 
+    font-weight: 500;
+    color: #ffffff;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    opacity: 1;
+}
+
+.btn-connect {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-color);
+}
+
+.btn-connect:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color); 
+}
+
+/* Настройка трех зон внутри готового флекс-контейнера */
+.header-left, 
+.header-center, 
+.header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Выравнивание элементов по краям хедера */
+.header-left {
+    justify-content: flex-start; /* Новый суб-логотип прижмется влево */
+}
+
+.header-center {
+    justify-content: center; /* Главный логотип HIRO на главной всегда в центре */
+}
+
+.header-right {
+    justify-content: flex-end; /* Кнопка "Связаться" или навигация прижмутся вправо */
+}
+
+/* Лаконичный стиль для текстового логотипа Heleo Lab в суб-хедере */
+.header-logo-sub {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Высота горизонтального SVG-логотипа в суб-хедере */
+.logo-sub-img {
+    height: 70px; /* Идеальный размер, чтобы не ломать высоту планки */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
