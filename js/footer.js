@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </nav>
 
                 <div class="footer-right">
-                    <a href="tel:79819448779" class="footer-link phone-link">7 981 944 87 79</a>
+                    <a href="tel:79819448779" class="footer-link phone-link">8 800 666 89 00</a>
                 </div>
             </div>
         </footer>
