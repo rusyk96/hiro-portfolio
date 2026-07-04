@@ -4,7 +4,7 @@ const headerSubHTML = `
     <div class="header-container">
         <div class="header-left">
             <a href="/" class="header-logo-sub">
-                <img src="img/logo_gorisonal.svg" alt="HELEO" class="logo-sub-img">
+                <img src="/img/logo_gorisonal.svg" alt="HELEO" class="logo-sub-img">
             </a> 
         </div>
         
