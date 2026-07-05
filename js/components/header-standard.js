@@ -1,4 +1,6 @@
 // js/header-standard.js
+export function initLoader() {
+    console.log("Лоудер инициализирован");
 
 const backdropStylePath = '/css/backdrops/header__backdrop.css';
 if (!document.querySelector(`link[href="${backdropStylePath}"]`)) {
@@ -32,4 +34,6 @@ if (headerContainer) {
         </div>
     </header>
     `;
+}
+
 }

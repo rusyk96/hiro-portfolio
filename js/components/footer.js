@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+export function initLoader() {
+    console.log("Лоудер инициализирован");
+    
     const footerContainer = document.getElementById('footer-component');
     
     if (footerContainer) {
@@ -22,4 +24,4 @@ document.addEventListener("DOMContentLoaded", () => {
         </footer>
         `;
     }
-});
+}

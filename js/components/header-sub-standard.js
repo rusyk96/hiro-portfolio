@@ -1,3 +1,6 @@
+export function initLoader() {
+    console.log("Лоудер инициализирован");
+
 const headerSubHTML = `
     <div class="header__backdrop_sub"></div>
 
@@ -19,3 +22,5 @@ const headerSubHTML = `
 
 // Рендерим в строго заданный компонент
 document.getElementById('header-component').innerHTML = headerSubHTML;
+
+}

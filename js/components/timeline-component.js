@@ -1,4 +1,7 @@
-// js/timeline-component.js
+// js/components/timeline-component.js
+
+export function initTimeline() {
+    console.log("Таймлайн инициализирован");
 
 const timelineStylePath = 'css/backdrops/timeline__backdrop.css';
 if (!document.querySelector(`link[href="${timelineStylePath}"]`)) {
@@ -9,7 +12,6 @@ if (!document.querySelector(`link[href="${timelineStylePath}"]`)) {
 }
 
 // Обернем всё в DOMContentLoaded, чтобы дождаться появления всех элементов
-document.addEventListener('DOMContentLoaded', () => {
     const timelineContainer = document.getElementById('timeline-component');
 
     if (timelineContainer) {
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Теперь вызываем логику
         initTimelineLogic();
     }
-});
+}
 
 function initTimelineLogic() {
     const timeline = document.getElementById('timelineNav');
